@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
   --color-gray-800 :#3B3B3B;  
   --color-gray-900 :#2F3640;
  
-  --color-red-600 :#FFADAD;
+  --color-red-300 :#FFADAD;
   --color-red-600 :#C23616;
 
   --color-green-500 :#44BD32;
@@ -31,7 +31,18 @@ const GlobalStyle = createGlobalStyle`
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: 14rem auto;
+  grid-template-columns: 16rem auto;
+`;
+
+export const Title = styled.h1`
+  display: flex;
+  justify-content: center;
+  margin-top: 3.75rem;
+  font-family: "Rancho", cursive;
+  color: var(--color-gray-800);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
 `;
 
 export default GlobalStyle;

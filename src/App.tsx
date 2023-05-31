@@ -1,12 +1,16 @@
 import Home from "./components/Home";
+import SideBar from "./components/SideBar";
 
-import GlobalStyle from "./styles/styles";
+import GlobalStyle, { Container } from "./styles/styles";
 
 const App = () => {
   return (
     <>
       <GlobalStyle />
-      <Home />
+      <Container>
+        <SideBar />
+        <Home />
+      </Container>
     </>
   );
 };
