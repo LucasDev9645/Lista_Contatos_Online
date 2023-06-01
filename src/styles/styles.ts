@@ -61,4 +61,8 @@ export const RemoveButton = styled(Button)`
   background-color: var(--color-red-600);
 `;
 
+export const SaveButton = styled(Button)`
+  background-color: var(--color-green-500);
+`;
+
 export default GlobalStyle;
