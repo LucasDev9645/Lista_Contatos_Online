@@ -1,5 +1,13 @@
+import Cards from "../Cards";
+
 const Home = () => {
-  return <h1>Home</h1>;
+  return (
+    <div>
+      <Cards />
+      <Cards />
+      <Cards />
+    </div>
+  );
 };
 
 export default Home;
