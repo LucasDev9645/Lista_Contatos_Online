@@ -1,17 +1,47 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import Contact from "../../../models/Contact";
 
+type ContactState = {
+  items: Contact[];
+};
+
+const initialState: ContactState = {
+  items: [
+    {
+      id: 1,
+      name: "Lucas freitas",
+      email: " Lucasdev9645@gmail.com",
+      telephone: 31973041723,
+    },
+    {
+      id: 2,
+      name: "Cintia Vieira",
+      email: " Cintia@gmail.com",
+      telephone: 31947281723,
+    },
+    {
+      id: 3,
+      name: "Maria Rute",
+      email: " rute0844@gmail.com",
+      telephone: 319874641723,
+    },
+    {
+      id: 4,
+      name: "Antônio Donizete",
+      email: " antonio9645@gmail.com",
+      telephone: 319854351723,
+    },
+  ],
+};
+
 const contactSlice = createSlice({
   name: "contato",
-  initialState: [
-    new Contact(1, "Lucas freitas", " Lucasdev9645@gmail.com", 31973041723),
-    new Contact(2, "Cintia Vieira", " Cintia@gmail.com", 31947281723),
-    new Contact(3, "Maria Rute", " rute0844@gmail.com", 319874641723),
-    new Contact(4, "Antônio Donizete", " antonio9645@gmail.com", 31965455623),
-  ],
+  initialState,
   reducers: {
     remove: (state, action: PayloadAction<number>) => {
-      state = state.filter((contact) => contact.id !== action.payload);
+      state.items = state.items.filter(
+        (contact) => contact.id !== action.payload
+      );
     },
   },
 });

@@ -8,15 +8,20 @@ import { Title } from "../../styles/styles";
 import { MainContainer } from "./styles";
 
 const Home = () => {
-  const { contact } = useSelector((state: RootReducer) => state);
+  const { items } = useSelector((state: RootReducer) => state.contact);
 
   return (
     <MainContainer>
       <Title>Sua Lista de Contatos</Title>
       <ul>
-        {contact.map((c) => (
+        {items.map((c) => (
           <li key={c.name}>
-            <Cards nome={c.name} email={c.email} telefone={c.telephone} />
+            <Cards
+              id={c.id}
+              name={c.name}
+              email={c.email}
+              telephone={c.telephone}
+            />
           </li>
         ))}
       </ul>
