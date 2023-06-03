@@ -2,13 +2,13 @@ class Contact {
   id: number;
   name: string;
   email: string;
-  telephone: number;
+  telephone: string;
 
-  constructor(id: number, name: string, email: string, telephone: number) {
-    this.id = id;
+  constructor(name: string, email: string, telephone: string, id: number) {
     this.name = name;
     this.email = email;
     this.telephone = telephone;
+    this.id = id;
   }
 }
 

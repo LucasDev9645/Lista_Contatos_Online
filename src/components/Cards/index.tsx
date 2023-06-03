@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { remove } from "../store/reducers/contactList";
+import { remove, edit } from "../store/reducers/contactList";
 
 import { Button, RemoveButton, SaveButton } from "../../styles/styles";
 import { ButtonContainer, CardsContainer, Field } from "./styles";
@@ -9,28 +9,79 @@ import Contact from "../../models/Contact";
 
 type Props = Contact;
 
-const Cards = ({ id, name, email, telephone }: Props) => {
+const Cards = ({
+  name: originalName,
+  email: originalEmail,
+  telephone: originalTelephone,
+  id,
+}: Props) => {
   const dispatch = useDispatch();
   const [isEdit, setIsEdit] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [telephone, setTelephone] = useState("");
+
+  useEffect(() => {
+    if (originalName.length > 0) setName(originalName);
+    if (originalEmail.length > 0) setEmail(originalEmail);
+    if (originalTelephone.length > 0) setTelephone(originalTelephone);
+  }, [originalName, originalEmail, originalTelephone]);
+
+  const cancelEdit = () => {
+    setIsEdit(false);
+    setName(originalName);
+    setEmail(originalEmail);
+    setTelephone(originalTelephone);
+  };
 
   return (
     <CardsContainer>
       <div>
-        <Field type="text" placeholder="Nome:" value={name} />
+        <Field
+          type="text"
+          placeholder="Nome:"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          disabled={!isEdit}
+        />
       </div>
       <div>
-        <Field type="email" placeholder="E-mail:" value={email} />
+        <Field
+          type="email"
+          placeholder="E-mail:"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          disabled={!isEdit}
+        />
       </div>
       <div>
-        <Field type="number" placeholder="Telefone:" value={telephone} />
+        <Field
+          type="number"
+          placeholder="Telefone:"
+          value={telephone}
+          onChange={(e) => setTelephone(e.target.value)}
+          disabled={!isEdit}
+        />
       </div>
       <ButtonContainer>
         {isEdit ? (
           <>
-            <SaveButton>Salvar</SaveButton>
-            <RemoveButton onClick={() => setIsEdit(false)}>
-              Cancelar
-            </RemoveButton>
+            <SaveButton
+              onClick={() => {
+                dispatch(
+                  edit({
+                    name,
+                    email,
+                    telephone,
+                    id,
+                  })
+                );
+                setIsEdit(false);
+              }}
+            >
+              Salvar
+            </SaveButton>
+            <RemoveButton onClick={cancelEdit}>Cancelar</RemoveButton>
           </>
         ) : (
           <>

@@ -8,28 +8,28 @@ type ContactState = {
 const initialState: ContactState = {
   items: [
     {
-      id: 1,
       name: "Lucas freitas",
       email: " Lucasdev9645@gmail.com",
-      telephone: 31973041723,
+      telephone: "31973041723",
+      id: 1,
     },
     {
-      id: 2,
       name: "Cintia Vieira",
       email: " Cintia@gmail.com",
-      telephone: 31947281723,
+      telephone: "31947281723",
+      id: 2,
     },
     {
-      id: 3,
       name: "Maria Rute",
       email: " rute0844@gmail.com",
-      telephone: 319874641723,
+      telephone: "319874641723",
+      id: 3,
     },
     {
-      id: 4,
       name: "Antônio Donizete",
       email: " antonio9645@gmail.com",
-      telephone: 319854351723,
+      telephone: "319854351723",
+      id: 4,
     },
   ],
 };
@@ -43,8 +43,17 @@ const contactSlice = createSlice({
         (contact) => contact.id !== action.payload
       );
     },
+    edit: (state, action: PayloadAction<Contact>) => {
+      const indexContact = state.items.findIndex(
+        (c) => c.id === action.payload.id
+      );
+
+      if (indexContact >= 0) {
+        state.items[indexContact] = action.payload;
+      }
+    },
   },
 });
 
-export const { remove } = contactSlice.actions;
+export const { remove, edit } = contactSlice.actions;
 export default contactSlice.reducer;
