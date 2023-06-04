@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 import styled from "styled-components";
 
-export const Circle = styled.button`
+export const Circle = styled(Link)`
   width: 4rem;
   height: 4rem;
   background-color: var(--color-gray-900);

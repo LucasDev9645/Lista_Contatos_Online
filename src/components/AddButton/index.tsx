@@ -1,7 +1,7 @@
 import { Circle } from "./styles";
 
 const AddButton = () => {
-  return <Circle>+</Circle>;
+  return <Circle to="/novo">+</Circle>;
 };
 
 export default AddButton;
