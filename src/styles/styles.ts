@@ -7,9 +7,6 @@ const GlobalStyle = createGlobalStyle`
   --color-gray-100 :#FAFAFA;
   --color-gray-200 :#FCFCFC; 
   --color-gray-300 :#F0F0F0;
-  --color-gray-550 :#8B8B8B;  
-  --color-gray-600 :#666666;
-  --color-gray-700 :#5E5E5E;  
   --color-gray-800 :#3B3B3B;  
   --color-gray-900 :#2F3640;
  
@@ -63,6 +60,33 @@ export const RemoveButton = styled(Button)`
 
 export const SaveButton = styled(Button)`
   background-color: var(--color-green-500);
+`;
+
+export const BackButton = styled(Button)`
+  width: 8rem;
+  height: 3rem;
+  font-size: 1rem;
+`;
+
+export const AddButton = styled(BackButton)`
+  background-color: var(--color-green-500);
+`;
+
+export const Field = styled.input`
+  font-size: 1rem;
+  width: 100%;
+  height: 2.5rem;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 0.6rem;
+  background-color: var(--color-gray-300);
+  padding-left: 0.5rem;
+
+  ::placeholder {
+    font-size: 1rem;
+    color: var(--color-gray-800);
+    font-weight: 700;
+  }
 `;
 
 export default GlobalStyle;

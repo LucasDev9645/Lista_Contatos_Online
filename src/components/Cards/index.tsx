@@ -3,8 +3,8 @@ import { useDispatch } from "react-redux";
 
 import { remove, edit } from "../store/reducers/contactList";
 
-import { Button, RemoveButton, SaveButton } from "../../styles/styles";
-import { ButtonContainer, CardsContainer, Field } from "./styles";
+import { Button, Field, RemoveButton, SaveButton } from "../../styles/styles";
+import { ButtonContainer, CardsContainer } from "./styles";
 import Contact from "../../models/Contact";
 
 type Props = Contact;
