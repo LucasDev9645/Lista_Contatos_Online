@@ -15,6 +15,6 @@ export const Circle = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   cursor: pointer;
 `;

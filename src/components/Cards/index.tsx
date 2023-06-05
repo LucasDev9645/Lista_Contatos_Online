@@ -37,6 +37,7 @@ const Cards = ({
   return (
     <CardsContainer>
       <div>
+        <i className="bi bi-person-fill"></i>
         <Field
           type="text"
           placeholder="Nome:"
@@ -46,6 +47,7 @@ const Cards = ({
         />
       </div>
       <div>
+        <i className="bi bi-envelope-at-fill"></i>
         <Field
           type="email"
           placeholder="E-mail:"
@@ -55,6 +57,7 @@ const Cards = ({
         />
       </div>
       <div>
+        <i className="bi bi-whatsapp"></i>
         <Field
           type="number"
           placeholder="Telefone:"

@@ -34,6 +34,7 @@ const Register = () => {
       <RegisterContainer>
         <Form onSubmit={addContact}>
           <div>
+            <i className="bi bi-person-fill"></i>
             <Field
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -42,6 +43,7 @@ const Register = () => {
             />
           </div>
           <div>
+            <i className="bi bi-envelope-at-fill"></i>
             <Field
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -50,6 +52,7 @@ const Register = () => {
             />
           </div>
           <div>
+            <i className="bi bi-whatsapp"></i>
             <Field
               value={telephone}
               onChange={(e) => setTelephone(e.target.value)}

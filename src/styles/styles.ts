@@ -43,10 +43,10 @@ export const Title = styled.h1`
 `;
 
 export const Button = styled.button`
-  width: 5rem;
-  height: 2rem;
+  width: 6rem;
+  height: 2.2rem;
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: var(--color-white);
   border: none;
   cursor: pointer;
@@ -64,16 +64,18 @@ export const SaveButton = styled(Button)`
 
 export const BackButton = styled(Button)`
   width: 8rem;
-  height: 3rem;
+  height: 2.8rem;
   font-size: 1rem;
 `;
 
 export const AddButton = styled(BackButton)`
+  margin-top: 0.8rem;
   background-color: var(--color-green-500);
 `;
 
 export const Field = styled.input`
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-style: italic;
   width: 100%;
   height: 2.5rem;
   border: none;
@@ -81,6 +83,7 @@ export const Field = styled.input`
   margin-bottom: 0.6rem;
   background-color: var(--color-gray-300);
   padding-left: 0.5rem;
+  font-weight: 700;
 
   ::placeholder {
     font-size: 1rem;
